@@ -1,6 +1,16 @@
 {
-  "name": "svelte-app",
+  "name": "honesttomatoes",
   "version": "1.0.0",
+  "description": "Checks if the tomatometer reflects the score of the listed reviews.",
+  "license": "ISC",
+  "author": {
+    "name": "Cameron White",
+    "email": "cameronwhite16@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/cameron-bam/honesttomatoes.git"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
