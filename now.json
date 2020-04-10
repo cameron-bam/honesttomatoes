@@ -1,6 +1,6 @@
 {
     "functions": {
-        "api/helloword.js": {
+        "api/helloworld.js": {
             "maxDuration": 10
         }
     }
