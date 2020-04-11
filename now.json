@@ -1,7 +1,13 @@
 {
     "functions": {
         "api/helloworld.js": {
-            "maxDuration": 10
+            "maxDuration": 60
+        },
+        "api/scrape-rt.js": {
+            "maxDuration": 60
         }
-    }
+    },
+    "routes": [
+        { "src": "/api/scrape-rt/(?<name>[^/]*)/(?<type>[^/]*)", "dest": "/api/scrape-rt.js?name=$name&type=$type" }
+    ]
 }
