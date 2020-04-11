@@ -1,10 +1,10 @@
 {
     "functions": {
         "api/helloworld.js": {
-            "maxDuration": 60
+            "maxDuration": 10
         },
         "api/scrape-rt.js": {
-            "maxDuration": 60
+            "maxDuration": 10
         }
     },
     "routes": [
