@@ -9,5 +9,10 @@
     },
     "routes": [
         { "src": "/api/scrape-rt/(?<type>[^/]*)/(?<name>[^/]*)", "dest": "/api/scrape-rt.js?name=$name&type=$type" }
-    ]
+    ],
+    "build": {
+        "env": {
+            "NODEJS_HELPERS": 12
+        }
+    }
 }
