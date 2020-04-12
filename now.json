@@ -12,7 +12,7 @@
     ],
     "build": {
         "env": {
-            "NODEJS_HELPERS": 12
+            "NODEJS_HELPERS": "12"
         }
     }
 }
