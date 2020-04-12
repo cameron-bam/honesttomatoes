@@ -31,7 +31,6 @@
   "dependencies": {
     "axios": "^0.19.2",
     "jsdom": "^16.2.2",
-    "sirv-cli": "^0.4.4",
-    "workerpool": "^5.0.4"
+    "sirv-cli": "^0.4.4"
   }
 }
