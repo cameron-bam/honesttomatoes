@@ -7,6 +7,9 @@
     "name": "Cameron White",
     "email": "cameronwhite16@gmail.com"
   },
+  "engines": {
+    "node": "13.12.0"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/cameron-bam/honesttomatoes.git"
@@ -28,6 +31,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "jsdom": "^16.2.2",
-    "sirv-cli": "^0.4.4"
+    "sirv-cli": "^0.4.4",
+    "workerpool": "^5.0.4"
   }
 }
