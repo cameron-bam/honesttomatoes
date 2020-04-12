@@ -8,6 +8,6 @@
         }
     },
     "routes": [
-        { "src": "/api/scrape-rt/(?<name>[^/]*)/(?<type>[^/]*)", "dest": "/api/scrape-rt.js?name=$name&type=$type" }
+        { "src": "/api/scrape-rt/(?<type>[^/]*)/(?<name>[^/]*)", "dest": "/api/scrape-rt.js?name=$name&type=$type" }
     ]
 }
