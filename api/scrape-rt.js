@@ -1,14 +1,12 @@
-const scrapeReviews = require('../lib/rt/scrape-reviews');
-const getPageReviewResults = require('../lib/rt/get-page-review-results');
 const apiErrorHandler = require('../lib/util/api-error-handler');
 
 module.exports = ({query: {name, type, page = undefined}}, res) => {
     let resultPromise;
     
     if (typeof page === 'number') {
-        resultPromise = getPageReviewResults({name, type, page});
+        resultPromise = require('../lib/rt/get-page-review-results')({name, type, page});
     } else {
-        resultPromise = scrapeReviews({name, type});
+        resultPromise = require('../lib/rt/scrape-reviews')({name, type});
     }
 
     resultPromise
