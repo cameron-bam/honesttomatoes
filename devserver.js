@@ -6,10 +6,10 @@ you can port it to suite your need
 const sirv = require("sirv");
 const polka = require("polka");
 const compression = require("compression");
-const proxy = require("express-http-proxy");
+const { createProxyMiddleware } = require("http-proxy-middleware");
 const { PORT, NODE_ENV, PROXY_HOST, BUILD_DIR } = process.env;
 const dev = NODE_ENV === "development";
-const apiProxy = proxy(PROXY_HOST);
+const apiProxy = createProxyMiddleware(PROXY_HOST, {changeOrigin: true});
 
 // assign server variable
 const server = polka();
