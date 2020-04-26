@@ -12,7 +12,7 @@
                 const promises = [];
 
                 for (let i = 0; i < totalPages; i += 1) {
-                    promises.push(axios.get(`/api/scrape-rt/type/m/${name}/page/${i}`));
+                    promises.push(axios.get(`/api/scrape-rt/type/m/name/${name}/page/${i}`));
                 }
 
                 return Promise.all(promises);
