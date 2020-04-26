@@ -1,6 +1,6 @@
 <script>
 	import CompareTomatoMeter from './components/CompareTomatoMeter.svelte';
-	const rottenTomatoes = 'rottentomatoes.com';
+	const rottenTomatoes = 'https://rottentomatoes.com/m/captain_marvel';
 	export let name;
 </script>
 
@@ -8,11 +8,12 @@
 	<h1>{name}</h1>
 
 	<p>
-		Enter a movie name from <a href="{`https://${rottenTomatoes}`}">{rottenTomatoes}</a> to see if the critic scores match the tomatometer score.
+		Rotten Tomatoes grades on a pass/fail system, whereas Honest Tomatoes grades based on the critics' original scores.
+		We also check whether or not a critic's review was really fresh, or rotten. The results might surprise you!
 	</p>
 
 	<p>
-		Rotten Tomatoes grades on a pass/fail system. Honest tomatoes grades based on the critics' original scores. We also check whether or not a critic's review was really fresh, or rotten. The results might surprise you!
+		Enter a link to a movie from Rotten Tomatoes (e.g. <a href="{rottenTomatoes}">{rottenTomatoes}</a>) to see if the critic scores match the tomatometer score.
 	</p>
 
 	<CompareTomatoMeter />

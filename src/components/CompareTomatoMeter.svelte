@@ -8,20 +8,23 @@
     import axios from 'axios';
     import plusMerge from '../../lib/util/plusmerge';
     import defaultResult from '../../lib/rt/default-review-result';
+    import getNameAndType from '../../lib/rt/get-name-type-from-rt-link';
     import prettyJs from 'pretty-js';
 
-    let name = "";
+    let url = "";
     let resultHtml = "";
 
     function handleSubmit(e) {
+        const {name, type} = getNameAndType(url);
+
         axios
-            .get(`/api/get-total-pages/type/m/name/${name}`)
+            .get(`/api/get-total-pages/type/${type}/name/${name}`)
             .then(({data: {totalPages}}) => {
                 const promises = [];
 
                 for (let i = 0; i < totalPages; i += 1) {
                     promises.push(axios
-                        .get(`/api/scrape-rt/type/m/name/${name}/page/${i}`)
+                        .get(`/api/scrape-rt/type/${type}/name/${name}/page/${i}`)
                         .then(({data}) => data));
                 }
 
@@ -50,11 +53,17 @@
         text-align: left;
         width: 250px;
     }
+
+    input[type="text"] {
+        display: block;
+        margin: 0.666em auto;
+        width: 500px;
+    }
 </style>
 
 <form on:submit|preventDefault={handleSubmit}>
-    <label>Movie Name</label>
-    <input type=text on:change={(e) => name = e.target.value}/>
+    <label>Movie Link</label>
+    <input type=text on:change={(e) => url = e.target.value}/>
 
     <input type="submit" value="Check honesty" />
 </form>
