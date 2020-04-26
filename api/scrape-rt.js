@@ -1,6 +1,6 @@
 const apiErrorHandler = require('../lib/util/api-error-handler');
 
-module.exports = ({query: {name, type, page = undefined}}, res) => {
+module.exports = ({query: {name, type, page}}, res) => {
     let resultPromise;
     
     if (typeof page === 'number') {
