@@ -28,6 +28,7 @@
     "http-proxy-middleware": "^1.0.3",
     "polka": "^0.5.2",
     "rollup": "^1.20.0",
+    "rollup-plugin-css-only": "^2.0.0",
     "rollup-plugin-livereload": "^1.0.0",
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^5.1.2",
@@ -37,6 +38,7 @@
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "highlight.js": "^10.0.0",
+    "pretty-js": "^0.2.1",
     "sirv-cli": "^0.4.4"
   }
 }

@@ -1,11 +1,17 @@
+<script context="module">
+    import hljs from 'highlight.js';
+    import '../../node_modules/highlight.js/styles/vs.css';
+    hljs.initHighlighting();
+</script>
+
 <script>
     import axios from 'axios';
     import plusMerge from '../../lib/util/plusmerge';
     import defaultResult from '../../lib/rt/default-review-result';
-    import hljs from 'highlight.js';
+    import prettyJs from 'pretty-js';
 
     let name = "";
-    let result = "";
+    let resultHtml = "";
 
     function handleSubmit(e) {
         axios
@@ -22,10 +28,27 @@
                 return Promise.all(promises);
             })
             .then((results) => {
-                result = hljs.hightlight("language-json", JSON.stringify(results.reduce(plusMerge, {...defaultResult})));
+                const allResults = results.reduce(plusMerge, {...defaultResult});
+                const formattedJson = prettyJs(JSON.stringify(allResults));
+                resultHtml = hljs.highlight("javascript", formattedJson).value;
             })
     }
 </script>
+
+<style>
+    form {
+        margin: 0 auto;
+    }
+
+    label, pre {
+        margin: 0.666em auto;
+    }
+
+    pre {
+        text-align: left;
+        width: 250px;
+    }
+</style>
 
 <form on:submit|preventDefault={handleSubmit}>
     <label>Movie Name</label>
@@ -34,9 +57,9 @@
     <input type="submit" value="Check honesty" />
 </form>
 
-{#if result !== ""}
+{#if resultHtml !== ""}
     <label>Result</label>
-    <pre class="language-json">
-        <code>{@html result}</code>
+    <pre class="hljs">
+        <code class="javascript">{@html resultHtml}</code>
     </pre>
 {/if}
