@@ -10,7 +10,7 @@
     "routes": [
         { "src": "/api/scrape-rt/type/(?<type>[^/]*)/name/(?<name>[^/]*)", "dest": "/api/scrape-rt.js?name=$name&type=$type" },
         { "src": "/api/scrape-rt/type/(?<type>[^/]*)/name/(?<name>[^/]*)/page/(?<page>[^/]*)", "dest": "/api/scrape-rt.js?name=$name&type=$type&page=$page" },
-        { "src": "/api/get-total-pages/type/(?<type>[^/]*)/name/(?<name>[^/]*)", "dest": "/api/get-total-pages.js?name=&name&type=$type"}
+        { "src": "/api/get-total-pages/type/(?<type>[^/]*)/name/(?<name>[^/]*)", "dest": "/api/get-total-pages.js?name=$name&type=$type"}
     ],
     "build": {
         "env": {
