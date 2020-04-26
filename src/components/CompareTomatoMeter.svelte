@@ -8,11 +8,7 @@
     function handleSubmit(e) {
         axios
             .get(`/api/get-total-pages/type/m/name/${name}`)
-            .then(({data}) => {
-                console.log(data);
-                return JSON.parse(data)
-            })
-            .then(({totalPages}) => {
+            .then(({data: {totalPages}}) => {
                 const promises = [];
 
                 for (let i = 0; i < totalPages; i += 1) {
