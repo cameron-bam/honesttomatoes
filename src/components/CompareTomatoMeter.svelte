@@ -2,6 +2,8 @@
     import axios from 'axios';
     import plusMerge from '../../lib/util/plusmerge';
     import defaultResult from '../../lib/rt/default-review-result';
+    import hljs from 'highlight.js';
+
     let name = "";
     let result = "";
 
@@ -20,7 +22,7 @@
                 return Promise.all(promises);
             })
             .then((results) => {
-                result = JSON.stringify(results.reduce(plusMerge, {...defaultResult}));
+                result = hljs.hightlight("language-json", JSON.stringify(results.reduce(plusMerge, {...defaultResult})));
             })
     }
 </script>
@@ -32,7 +34,9 @@
     <input type="submit" value="Check honesty" />
 </form>
 
-<label>Result</label>
-<textarea>
-{result}
-</textarea>
+{#if result !== ""}
+    <label>Result</label>
+    <pre class="language-json">
+        <code>{@html result}</code>
+    </pre>
+{/if}
