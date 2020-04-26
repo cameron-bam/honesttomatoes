@@ -60,11 +60,7 @@ function serve() {
 		writeBundle() {
 			if (!started) {
 				started = true;
-
-				require('child_process').spawn('npm', ['run', 'start', '--', '--dev'], {
-					stdio: ['ignore', 'inherit', 'inherit'],
-					shell: true
-				});
+				require('./devserver');
 			}
 		}
 	};
