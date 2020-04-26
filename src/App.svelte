@@ -1,11 +1,13 @@
 <script>
 	import CompareTomatoMeter from './components/CompareTomatoMeter.svelte';
+	const rottenTomatoes = 'rottentomatoes.com';
 	export let name;
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+	<h1>{name}</h1>
+
+	<p>Enter a movie name from <a href="{`https://${rottenTomatoes}`}">{rottenTomatoes}</a> to see if the critic scores match the tomatometer score.</p>
 
 	<CompareTomatoMeter />
 </main>

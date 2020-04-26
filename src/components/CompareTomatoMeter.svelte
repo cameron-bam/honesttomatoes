@@ -29,6 +29,8 @@
             })
             .then((results) => {
                 const allResults = results.reduce(plusMerge, {...defaultResult});
+                allResults.rtScore = Math.round(100 * (allResults.rtFresh / (allResults.reviewCount - allResults.rtUnknown)));
+                allResults.osScore = Math.round(100 * (allResults.osFresh / (allResults.reviewCount - allResults.osUnknown)));
                 const formattedJson = prettyJs(JSON.stringify(allResults));
                 resultHtml = hljs.highlight("javascript", formattedJson).value;
             })
