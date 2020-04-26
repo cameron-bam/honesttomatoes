@@ -8,7 +8,10 @@
     function handleSubmit(e) {
         axios
             .get(`/api/get-total-pages/type/m/name/${name}`)
-            .then(({data}) => JSON.parse(data))
+            .then(({data}) => {
+                console.log(data);
+                return JSON.parse(data)
+            })
             .then(({totalPages}) => {
                 const promises = [];
 
@@ -20,7 +23,7 @@
             })
             .then((results) => {
                 result = JSON.stringify(results.reduce(plusMerge, {...defaultResult}));
-            });
+            })
     }
 </script>
 
