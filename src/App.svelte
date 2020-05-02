@@ -17,6 +17,10 @@
 	</p>
 
 	<CompareTomatoMeter />
+
+	<p>
+		This is an open source project. You can find the source code <a href="https://github.com/cameron-bam/honesttomatoes">here</a>.
+	</p>
 </main>
 
 <style>
